@@ -3,7 +3,10 @@ package com.example.myfoodcriticapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,5 +17,22 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
+
+        Button register_Btn = findViewById(R.id.Register_btn);
+        Button login_Btn = findViewById(R.id.Login_btn);
+        register_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,AddUsersActivity.class));
+            }
+        });
+
+        login_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            }
+        });
+
     }
 }
