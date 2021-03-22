@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MyFoodCriticApp</string>
     <string name="Fragment_title">YourLocalFoodCritic</string>
-    <string name="Register_button">Register</string>
-    <string name="Login_button">Login</string>
+    <string name="start_button">Get started!</string>
 </resources>

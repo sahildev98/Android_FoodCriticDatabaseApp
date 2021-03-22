@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransact.commit();
 
         Button register_Btn = findViewById(R.id.Register_btn);
-        Button login_Btn = findViewById(R.id.Login_btn);
+
         register_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,12 +27,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        login_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
-            }
-        });
 
     }
 }

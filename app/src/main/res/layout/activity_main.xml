@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:text="@string/Register_button"
+        android:text="@string/start_button"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:backgroundTint="@color/design_default_color_on_primary"
@@ -20,18 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Login_btn"
-        android:layout_width="109dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/Login_button"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:backgroundTint="@color/design_default_color_on_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_btn" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
