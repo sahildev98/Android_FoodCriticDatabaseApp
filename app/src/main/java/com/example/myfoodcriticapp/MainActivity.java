@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
 
-        Button register_Btn = findViewById(R.id.Register_btn);
+        Button start = findViewById(R.id.start_Btn);
 
-        register_Btn.setOnClickListener(new View.OnClickListener() {
+        start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,AddUsersActivity.class));
+                startActivity(new Intent(MainActivity.this, AddFoodActivity.class));
             }
         });
 
