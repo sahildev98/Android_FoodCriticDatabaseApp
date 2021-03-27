@@ -26,7 +26,7 @@ public class Database extends DatabaseHelper {
         String orderBy = "restaurantName DESC";
         String limit = "100";
 
-        Cursor cursor = db.query(table,columns,selection,selectionArgs,groupBy,having,orderBy,limit);
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
         return cursor;
     }
 }
