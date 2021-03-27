@@ -13,7 +13,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String restaurant_Query = "CREATE TABLE IF NOT EXISTS tblRestaurant (" +
                 "RestaurantID int PRIMARY KEY AUTOINCREMENT,"+
                 "restaurantName text,"+
-                "Address text,"+
+                "address text,"+
                 "phoneNum int"+
                 ")";
                 db.execSQL(restaurant_Query);
