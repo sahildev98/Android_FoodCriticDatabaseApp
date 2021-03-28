@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddFoodActivity.class));
+                startActivity(new Intent(MainActivity.this, AddRestaurantActivity.class));
             }
         });
 
