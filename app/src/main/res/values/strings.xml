@@ -8,4 +8,5 @@
     <string name="address_Textbox">Enter Restaurant Address:</string>
     <string name="Phone_Lbl">Restaurant  Phone Number:</string>
     <string name="phoneNum_Box">Enter phone number:</string>
+    <string name="continue_Btn">Continue</string>
 </resources>
