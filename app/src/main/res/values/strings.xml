@@ -2,4 +2,10 @@
     <string name="app_name">MyFoodCriticApp</string>
     <string name="Fragment_title">YourLocalFoodCritic</string>
     <string name="start_button">Get started!</string>
+    <string name="restaurant_Lbl">Restaurant:</string>
+    <string name="restaurant_name">Enter Restaurant Name</string>
+    <string name="Address_Lbl">Restaurant address:</string>
+    <string name="address_Textbox">Enter Restaurant Address:</string>
+    <string name="Phone_Lbl">Restaurant  Phone Number:</string>
+    <string name="phoneNum_Box">Enter phone number:</string>
 </resources>
