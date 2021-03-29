@@ -14,12 +14,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "RestaurantID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
                 "restaurantName text,"+
                 "address text,"+
-                "phoneNum int"+
+                "phoneNum text"+
                 ")";
                 db.execSQL(restaurant_Query);
 
         String food_Query = "CREATE TABLE IF NOT EXISTS tblFood (" +
-                "FoodID int PRIMARY KEY AUTOINCREMENT, "+
+                "FoodID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "+
                 "PlaceID int,"+
                 "foodName text,"+
                 "price real,"+
@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         String ratings_query = "CREATE TABLE IF NOT EXISTS tblRatings (" +
-                "RatingsID int PRIMARY KEY AUTOINCREMENT,"+
+                "RatingsID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
                 "locationID int,"+
                 "Ratings numeric,"+
                 "food_description text,"+
