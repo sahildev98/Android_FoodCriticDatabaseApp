@@ -11,7 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String restaurant_Query = "CREATE TABLE IF NOT EXISTS tblRestaurant (" +
-                "RestaurantID INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "RestaurantID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
                 "restaurantName text,"+
                 "address text,"+
                 "phoneNum int"+
