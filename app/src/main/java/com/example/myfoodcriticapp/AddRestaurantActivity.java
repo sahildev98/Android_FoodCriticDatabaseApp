@@ -3,6 +3,8 @@ package com.example.myfoodcriticapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,8 +29,25 @@ Button continue_btn;
         continue_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            /* Values that will be inserted in to the database with String Restaurant name
+            address and phone number. */
+                String restaurantNameValue = restaurant_Name.getText().toString();
+                String restaurantAddressValue = restaurant_Address.getText().toString();
+                String phoneNumValue = restaurant_Phone.getText().toString();
+                ContentValues values = new ContentValues();
+                values.put("restaurant_address", restaurantNameValue);
+                values.put("restaurant_Address", restaurantAddressValue);
+                values.put("restaurant_Phone", phoneNumValue);
+                // returns the application object context in order to return data
+                Database db = new Database(getApplicationContext());
+                 /* Calls the addRestaurant() Cursor method in database class and save data +
+                 move to the next activity called AddFoodActivity.*/
+                db.addRestaurant(values);
+                startActivity(new Intent(AddRestaurantActivity.this,AddFoodActivity.class));
+
 
             }
+
         });
 
     }
