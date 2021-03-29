@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,17 +34,12 @@ Button continue_btn;
             address and phone number. */
                 String restaurantNameValue = restaurant_Name.getText().toString();
                 String restaurantAddressValue = restaurant_Address.getText().toString();
-                String phoneNumValue = restaurant_Phone.getText().toString();
+                String restaurantPhoneNumValue = restaurant_Phone.getText().toString();
                 ContentValues values = new ContentValues();
-                values.put("restaurant_address", restaurantNameValue);
-                values.put("restaurant_Address", restaurantAddressValue);
-                values.put("restaurant_Phone", phoneNumValue);
-                // returns the application object context in order to return data
-                Database db = new Database(getApplicationContext());
-                 /* Calls the addRestaurant() Cursor method in database class and save data +
-                 move to the next activity called AddFoodActivity.*/
-                db.addRestaurant(values);
-                startActivity(new Intent(AddRestaurantActivity.this,AddFoodActivity.class));
+                values.put("name", restaurantNameValue);
+                values.put("address", restaurantAddressValue);
+                values.put("phone", restaurantPhoneNumValue);
+
 
 
             }
