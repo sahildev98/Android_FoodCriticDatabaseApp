@@ -18,7 +18,7 @@ public class Database extends DatabaseHelper {
     public Cursor outputRestaurantTable() {
         SQLiteDatabase db  = this.getReadableDatabase();
         String table = "tblRestaurant";
-        String [] columns = {"restaurantName", "address, phoneNum"};
+        String [] columns = {"restaurantName", "address", "phoneNum"};
         String selection = "";
         String  [] selectionArgs = {};
         String groupBy = null;
