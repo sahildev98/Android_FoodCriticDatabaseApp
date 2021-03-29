@@ -6,44 +6,44 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public DatabaseHelper (Context context) { super(context, "myFoodCriticDB.db", null, 1); }
+    public DatabaseHelper (Context context) { super(context, "myFoodCriticDB.db", null, 3); }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String restaurant_Query = "CREATE TABLE IF NOT EXISTS tblRestaurant (" +
-                "RestaurantID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
-                "restaurantName text,"+
+        String restaurant_Query = "CREATE TABLE IF NOT EXISTS Restaurant (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
+                "name text,"+
                 "address text,"+
-                "phoneNum text"+
+                "phone text"+
                 ")";
                 db.execSQL(restaurant_Query);
 
-        String food_Query = "CREATE TABLE IF NOT EXISTS tblFood (" +
-                "FoodID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "+
-                "PlaceID int,"+
-                "foodName text,"+
+        String food_Query = "CREATE TABLE IF NOT EXISTS Food (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "+
+                "restaurantID int,"+
+                "name text,"+
                 "price real,"+
-                "FOREIGN KEY (PlaceID) REFERENCES PlaceID(RestaurantID)"+
+                "description text,"+
+                "FOREIGN KEY (RestaurantID) REFERENCES restaurant(ID)"+
                 ")";
                 db.execSQL(food_Query);
 
 
-        String ratings_query = "CREATE TABLE IF NOT EXISTS tblRatings (" +
-                "RatingsID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
-                "locationID int,"+
-                "Ratings numeric,"+
-                "food_description text,"+
-                "FOREIGN KEY (LocationID) REFERENCES LocationID(RestaurantID)"+
+        String ratings_Query = "CREATE TABLE IF NOT EXISTS Ratings (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
+                "foodID int,"+
+                "ratings numeric,"+
+                "review text,"+
+                "FOREIGN KEY (foodID) REFERENCES Food(ID)"+
                 ")";
-                db.execSQL(ratings_query);
+                db.execSQL(ratings_Query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("Drop TABLE IF EXISTS tblRestaurant");
+        db.execSQL("Drop TABLE IF EXISTS Restaurant");
+        db.execSQL("Drop TABLE IF EXISTS Food");
+        db.execSQL("Drop TABLE IF EXISTS Ratings");
         onCreate(db);
-        db.execSQL("Drop TABLE IF EXISTS tblFood");
-        onCreate(db);
-        db.execSQL("Drop TABLE IF EXISTS tblRatings");
     }
 }
