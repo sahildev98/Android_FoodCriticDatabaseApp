@@ -39,7 +39,14 @@ Button continue_btn;
                 values.put("name", restaurantNameValue);
                 values.put("address", restaurantAddressValue);
                 values.put("phone", restaurantPhoneNumValue);
-
+                // returns the application object context in order to return data
+                Database db = new Database(getApplicationContext());
+                 /* Calls the addRestaurant() method in database class and save data +
+                 move to the next activity called AddFoodActivity.*/
+                long restaurantID = db.addRestaurant(values);
+                Intent intent = new Intent(AddRestaurantActivity.this,AddFoodActivity.class);
+                intent.putExtra("ID",restaurantID);
+                startActivity(intent);
 
 
             }
