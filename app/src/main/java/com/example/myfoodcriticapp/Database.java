@@ -35,5 +35,18 @@ public class Database extends DatabaseHelper {
         return cursor;
     }
 
+    public Cursor outputFoodTable(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String table = "Food";
+        String [] columns = {"name", "price", "description"};
+        String selection = "";
+        String [] selectionArgs = {};
+        String groupBy = null;
+        String having = null;
+        String orderBy = "name DESC";
+        String limit = "100";
 
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+        return cursor;
+    }
 }
