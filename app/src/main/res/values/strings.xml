@@ -9,4 +9,10 @@
     <string name="Phone_Lbl">Restaurant  Phone Number:</string>
     <string name="phoneNum_Box">Enter phone number:</string>
     <string name="continue_Btn">Continue</string>
+    <string name="food_Lbl">Food:</string>
+    <string name="food_Name">Enter Food Name:</string>
+    <string name="price_Lbl">Price:</string>
+    <string name="price_TextBox">Enter Price Of Food:</string>
+    <string name="descriptionLbl">Food Description:</string>
+    <string name="descriptionTextbox">Enter Description Of Food</string>
 </resources>
