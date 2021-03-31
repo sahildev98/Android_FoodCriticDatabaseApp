@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public DatabaseHelper (Context context) { super(context, "myFoodCriticDB.db", null, 3); }
+    public DatabaseHelper (Context context) { super(context, "myFoodCriticDB.db", null, 4); }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String ratings_Query = "CREATE TABLE IF NOT EXISTS Ratings (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
                 "foodID int,"+
-                "ratings numeric,"+
+                "ratings int,"+
                 "review text,"+
                 "FOREIGN KEY (foodID) REFERENCES Food(ID)"+
                 ")";
