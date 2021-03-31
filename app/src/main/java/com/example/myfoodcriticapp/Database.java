@@ -15,6 +15,11 @@ public class Database extends DatabaseHelper {
         return db.insert("restaurant", null, values);
     }
 
+    public long addFood(ContentValues values){
+        SQLiteDatabase db = getWritableDatabase();
+        return db.insert("food", null, values);
+    }
+
     public Cursor outputRestaurantTable() {
         SQLiteDatabase db  = this.getReadableDatabase();
         String table = "Restaurant";
@@ -29,4 +34,6 @@ public class Database extends DatabaseHelper {
         Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
         return cursor;
     }
+
+
 }
