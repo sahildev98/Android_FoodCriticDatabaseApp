@@ -7,7 +7,7 @@
     tools:context=".AddRestaurantActivity">
 
     <EditText
-        android:id="@+id/phone_Textbox"
+        android:id="@+id/phoneTextbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -21,10 +21,10 @@
         android:hint="@string/phoneNum_Box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneLbl" />
 
     <EditText
-        android:id="@+id/address_Textbox"
+        android:id="@+id/addressTextbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -36,13 +36,13 @@
         android:ems="10"
         android:hint="@string/address_Textbox"
         android:inputType="text"
-        android:labelFor="@id/address_Lbl"
+        android:labelFor="@id/addressLbl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address_Lbl" />
+        app:layout_constraintTop_toBottomOf="@+id/addressLbl" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/phoneLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -50,10 +50,10 @@
         android:layout_marginTop="24dp"
         android:text="@string/Phone_Lbl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address_Textbox" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTextbox" />
 
     <TextView
-        android:id="@+id/restaurant_Lbl"
+        android:id="@+id/restaurantLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/address_Lbl"
+        android:id="@+id/addressLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -72,10 +72,10 @@
         android:layout_marginTop="24dp"
         android:text="@string/Address_Lbl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurant_Textbox" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextbox" />
 
     <EditText
-        android:id="@+id/restaurant_Textbox"
+        android:id="@+id/nameTextbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -86,14 +86,14 @@
         android:ems="10"
         android:hint="@string/restaurant_name"
         android:inputType="text"
-        android:labelFor="@id/restaurant_Lbl"
+        android:labelFor="@id/restaurantLbl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurant_Lbl"
+        app:layout_constraintTop_toBottomOf="@+id/restaurantLbl"
         android:autofillHints="@string/restaurant_name" />
 
     <Button
-        android:id="@+id/continue_Btn"
+        android:id="@+id/continueBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
