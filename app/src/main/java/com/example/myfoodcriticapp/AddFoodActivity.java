@@ -5,10 +5,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class AddFoodActivity extends AppCompatActivity {
 EditText foodName, price, foodDescription;
+Button continueBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,10 @@ EditText foodName, price, foodDescription;
         foodName = findViewById(R.id.foodTextbox);
         price = findViewById(R.id.priceTextbox);
         foodDescription = findViewById(R.id.descriptionTextbox);
+        continueBtn = findViewById(R.id.continueBtn);
+
+
+
 
 
 
