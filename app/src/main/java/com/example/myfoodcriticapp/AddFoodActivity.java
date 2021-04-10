@@ -3,6 +3,7 @@ package com.example.myfoodcriticapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,18 @@ Button continueBtn;
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* Values that will be inserted into the database with the following columns: name
+            price and description passed in as Strings and double for price.  */
+                String foodNameValue = foodName.getText().toString();
+                String priceString =  price.getText().toString();
+                double priceValue = Double.parseDouble(priceString);
+                String descriptionValue = foodDescription.getText().toString();
+                // ContentValues class is implemented for containing the data above so it that can be passed onto.
+                ContentValues values = new ContentValues();
+                values.put("name", foodNameValue);
+                values.put("price", priceValue);
+                values.put("description", descriptionValue);
+
 
             }
         });
