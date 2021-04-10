@@ -5,9 +5,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class AddFoodActivity extends AppCompatActivity {
-
+EditText foodName, price, foodDescription;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,10 @@ public class AddFoodActivity extends AppCompatActivity {
          */
         Long id = getIntent().getLongExtra("ID",0);
         Database db = new Database(getApplicationContext());
+        // The following EditText views and a button are initialised to the corresponding ids set in activity_add_food xml.
+        foodName = findViewById(R.id.foodTextbox);
+        price = findViewById(R.id.priceTextbox);
+        foodDescription = findViewById(R.id.descriptionTextbox);
 
 
 
