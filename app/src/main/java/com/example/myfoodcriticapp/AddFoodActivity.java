@@ -4,15 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class AddFoodActivity extends AppCompatActivity {
-EditText foodName, price, foodDescription;
-Button continueBtn;
+    EditText foodName, price, foodDescription;
+    Button continueBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +30,22 @@ Button continueBtn;
          * retrieves intent data from from previous activity. This ID represents as a foreign key to the
          * table restaurant ID
          */
-        Long id = getIntent().getLongExtra("ID",0);
+        Long restaurantID = getIntent().getLongExtra("ID",0);
+        // returns the application object context in order to return data
         Database db = new Database(getApplicationContext());
+        Cursor restaurantDetails=db.getRestaurant(restaurantID);
+        restaurantDetails.moveToFirst();
+        String restaurantName = restaurantDetails.getString(0);
+        String restaurantAddress = restaurantDetails.getString(1);
+        String restaurantPhone = restaurantDetails.getString(2);
         // The following EditText views and a button are initialised to the corresponding ids set in activity_add_food xml.
+
+        TextView restaurantNameTextView = findViewById(R.id.restaurantNameText);
+        restaurantNameTextView.setText(restaurantName);
         foodName = findViewById(R.id.foodTextbox);
         price = findViewById(R.id.priceTextbox);
         foodDescription = findViewById(R.id.descriptionTextbox);
-        continueBtn = findViewById(R.id.continueBtn);
+        continueBtn = findViewById(R.id.addFoodItemBtn);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,11 +58,19 @@ Button continueBtn;
                 String descriptionValue = foodDescription.getText().toString();
                 // ContentValues class is implemented for containing the data above so it that can be passed onto.
                 ContentValues values = new ContentValues();
+                values.put("restaurantID", restaurantID);
                 values.put("name", foodNameValue);
                 values.put("price", priceValue);
                 values.put("description", descriptionValue);
-
-
+                /* Calls the addFood() method in database class and save data.
+                    Long instance is created
+                    to parse the primary key to the next activity as a foreign key use.
+                    The startActivity occurs to to initiate the next activity called AddReviewActivity.
+                 */
+                long foodID = db.addFood(values);
+                Intent intent= new Intent(AddFoodActivity.this,AddReviewActivity.class);
+                intent.putExtra("ID",foodID);
+                startActivity(intent);
             }
         });
 
