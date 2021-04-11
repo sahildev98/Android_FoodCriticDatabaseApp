@@ -20,6 +20,39 @@ public class Database extends DatabaseHelper {
         return db.insert("food", null, values);
     }
 
+    public Cursor getRestaurant(long ID) {
+        SQLiteDatabase db  = this.getReadableDatabase();
+        String table = "Restaurant";
+        String [] columns = {"name", "address", "phone", "ID"};
+        String selection = "ID=?";
+        String  [] selectionArgs = {String.valueOf(ID)};
+        String groupBy = null;
+        String having = null;
+        String orderBy = "name DESC";
+        String limit = "";
+
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+        return cursor;
+
+    }
+
+    public Cursor getAllRestaurants() {
+        SQLiteDatabase db  = this.getReadableDatabase();
+        String table = "Restaurant";
+        String [] columns = {"name", "address", "phone", "ID"};
+        String selection = "";
+        String  [] selectionArgs = {};
+        String groupBy = null;
+        String having = null;
+        String orderBy = "name DESC";
+        String limit = "";
+
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+        return cursor;
+
+    }
+
+
     public Cursor outputRestaurantTable() {
         SQLiteDatabase db  = this.getReadableDatabase();
         String table = "Restaurant";
