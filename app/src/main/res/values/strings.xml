@@ -17,4 +17,5 @@
     <string name="descriptionTextbox">Enter Description Of Food</string>
     <string name="restaurantInstruction">Enter Restaurant Details:</string>
     <string name="addResturant_Btn">Add Restaurant</string>
+    <string name="addFootItemBtn">Add FoodItem</string>
 </resources>

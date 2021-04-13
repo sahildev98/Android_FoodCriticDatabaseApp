@@ -93,7 +93,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Add FoodItem"
+        android:text="@string/addFootItemBtn"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="@+id/descriptionTextbox"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTextbox" />
 
