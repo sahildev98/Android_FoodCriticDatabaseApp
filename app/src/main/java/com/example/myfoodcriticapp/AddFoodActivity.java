@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class AddFoodActivity extends AppCompatActivity {
     EditText foodName, price, foodDescription;
-    Button continueBtn;
+    Button addFoodBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class AddFoodActivity extends AppCompatActivity {
         Database db = new Database(getApplicationContext());
         Cursor restaurantDetails=db.getRestaurant(restaurantID);
         restaurantDetails.moveToFirst();
-        String restaurantName = restaurantDetails.getString(0);
+        String restaurantName = "Restaurant name entered: " + restaurantDetails.getString(0);
         String restaurantAddress = restaurantDetails.getString(1);
         String restaurantPhone = restaurantDetails.getString(2);
         // The following EditText views and a button are initialised to the corresponding ids set in activity_add_food xml.
@@ -45,9 +45,9 @@ public class AddFoodActivity extends AppCompatActivity {
         foodName = findViewById(R.id.foodTextbox);
         price = findViewById(R.id.priceTextbox);
         foodDescription = findViewById(R.id.descriptionTextbox);
-        continueBtn = findViewById(R.id.addFoodItemBtn);
+        addFoodBtn = findViewById(R.id.addFoodItemBtn);
 
-        continueBtn.setOnClickListener(new View.OnClickListener() {
+        addFoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /* Values that will be inserted into the database with the following columns: name
