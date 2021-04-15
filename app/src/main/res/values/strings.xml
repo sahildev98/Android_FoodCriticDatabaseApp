@@ -18,4 +18,10 @@
     <string name="restaurantInstruction">Enter Restaurant Details:</string>
     <string name="addResturant_Btn">Add Restaurant</string>
     <string name="addFootItemBtn">Add FoodItem</string>
+    <string name="enterReviewText">Enter Review Details:</string>
+    <string name="ratingTextView">Rating:</string>
+    <string name="reviewLbl">Review Food:</string>
+    <string name="reviewDescriptionText"></string>
+    <string name="reviewBtn">Add Review</string>
+    <string name="enterReviewTextbox">Enter Review of Food</string>
 </resources>
