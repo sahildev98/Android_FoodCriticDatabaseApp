@@ -1,15 +1,41 @@
 package com.example.myfoodcriticapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.RatingBar;
 
 public class AddReviewActivity extends AppCompatActivity {
+EditText reviewDescription;
+RatingBar simpleRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_review);
-        Long id = getIntent().getLongExtra("ID",0);
+        /**
+         * @return the fragment manager that is associated with this activity. Fragment is then
+         * initialised with a beginTransaction method.
+         */
+        FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
+        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
+        fragmentTransact.commit();
+        /**
+         * retrieves intent data from from previous activity. This foodID represents as a foreign key to the
+         * table food.
+         */
+        Long foodID = getIntent().getLongExtra("ID",0);
+        Database db = new Database(getApplicationContext());
+        Cursor foodDetails = db.getFood(foodID);
+        foodDetails.moveToFirst();
+        String foodName = "Food name entered " + foodDetails.getString(0);
+
+        // Following variables used to insert data into the database
+        reviewDescription = findViewById(R.id.reviewEditText);
+        simpleRatingBar = findViewById(R.id.ratingBar);
+
     }
 }
