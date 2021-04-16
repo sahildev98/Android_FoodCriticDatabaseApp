@@ -57,7 +57,7 @@ public class Database extends DatabaseHelper {
         String table = "Food";
         String [] columns = {"name", "price", "description", "ID"};
         String selection = "ID=?";
-        String [] selectionsArgs = {};
+        String [] selectionsArgs = {String.valueOf(ID)};
         String groupBy = null;
         String having = null;
         String orderBy = "name DESC";
