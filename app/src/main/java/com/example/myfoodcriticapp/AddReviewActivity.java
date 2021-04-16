@@ -58,7 +58,9 @@ Button addCritBtn;
                 values.put("foodID", foodID);
                 values.put("ratings", ratingValue);
                 values.put("review", reviewValue);
+                Long reviewID = db.addReview(values);
                 Intent intent = new Intent(AddReviewActivity.this,OutputFoodCrticActivity.class);
+                intent.putExtra("ID", reviewID);
                 startActivity(intent);
             }
         });
