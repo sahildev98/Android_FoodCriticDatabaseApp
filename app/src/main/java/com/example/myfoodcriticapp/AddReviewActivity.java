@@ -51,7 +51,8 @@ Button addCritBtn;
             public void onClick(View v) {
                 /* Values that will be inserted into the database with the following columns: rating
             and review. Review parsed in as String and rating parsed in as int.  */
-                int ratingValue = simpleRatingBar.getNumStars();
+                float getRatingValue = simpleRatingBar.getRating();
+                int ratingValue = Math.round(getRatingValue);
                 String reviewValue = reviewDescription.getText().toString();
                 // ContentValues class is implemented for containing the data above so it that can be passed onto.
                 ContentValues values = new ContentValues();
