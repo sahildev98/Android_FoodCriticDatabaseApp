@@ -44,6 +44,24 @@ Button addCritBtn;
         foodNameValue.setText(storeFoodName);
         reviewDescription = findViewById(R.id.reviewEditText);
         simpleRatingBar = findViewById(R.id.ratingBar);
+        addCritBtn = findViewById(R.id.addReviewBtn);
+
+        addCritBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Values that will be inserted into the database with the following columns: rating
+            and review. Review parsed in as String and rating parsed in as int.  */
+                int ratingValue = simpleRatingBar.getNumStars();
+                String reviewValue = reviewDescription.getText().toString();
+                // ContentValues class is implemented for containing the data above so it that can be passed onto.
+                ContentValues values = new ContentValues();
+                values.put("foodID", foodID);
+                values.put("ratings", ratingValue);
+                values.put("review", reviewValue);
+                Intent intent = new Intent(AddReviewActivity.this,OutputFoodCrticActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
