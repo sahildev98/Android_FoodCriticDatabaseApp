@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ListRestaurantActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/linearContainer"
+        android:layout_width="391dp"
+        android:layout_height="628dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/backBtn"
+            app:backgroundTint="@color/design_default_color_error" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
