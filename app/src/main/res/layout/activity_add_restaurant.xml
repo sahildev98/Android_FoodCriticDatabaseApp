@@ -89,14 +89,12 @@
 
     <Button
         android:id="@+id/continueBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="167dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
         android:text="@string/addResturant_Btn"
         app:backgroundTint="@color/design_default_color_error"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/phoneTextbox"
         app:layout_constraintTop_toBottomOf="@+id/phoneTextbox" />
 
     <androidx.fragment.app.FragmentContainerView
@@ -122,5 +120,15 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_container_view" />
+
+    <Button
+        android:id="@+id/viewResBtn"
+        android:layout_width="141dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/viewRestaurantBtn"
+        app:backgroundTint="@color/design_default_color_error"
+        app:layout_constraintStart_toStartOf="@+id/phoneTextbox"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextbox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
