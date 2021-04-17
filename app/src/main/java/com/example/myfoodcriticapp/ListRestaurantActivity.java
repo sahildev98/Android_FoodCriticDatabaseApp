@@ -30,6 +30,26 @@ Button backBtn;
         Cursor getRestaurantDetails = db.getAllRestaurants();
         getRestaurantDetails.moveToFirst();
 
+        do {
+            String getRestaurantName = getRestaurantDetails.getString(0);
+            TextView restaurantName = new TextView(this);
+            restaurantName.setText(getRestaurantName);
+            container.addView(restaurantName);
+            Button deleteBtn = new Button(this);
+            deleteBtn.setText("Delete");
+            container.addView(deleteBtn);
+        } while(getRestaurantDetails.moveToNext());
+
+        backBtn = findViewById(R.id.backButton);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListRestaurantActivity.this,AddRestaurantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }
