@@ -24,4 +24,6 @@
     <string name="reviewDescriptionText"></string>
     <string name="reviewBtn">Add Review</string>
     <string name="enterReviewTextbox">Enter Review of Food</string>
+    <string name="viewRestaurantBtn">View Restaurants</string>
+    <string name="backBtn">Back</string>
 </resources>
