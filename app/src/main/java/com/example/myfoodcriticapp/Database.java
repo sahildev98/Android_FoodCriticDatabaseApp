@@ -21,7 +21,7 @@ public class Database extends DatabaseHelper {
     }
 
     public long addReview(ContentValues values){
-        SQLiteDatabase db =getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         return db.insert("ratings",null,values);
     }
 
@@ -101,5 +101,13 @@ public class Database extends DatabaseHelper {
 
         Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
         return cursor;
+    }
+
+    public int DeleteRestaurant(long ID){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String column = "name=?";
+        String [] restaurant =  {"name"};
+
+        return db.delete("Restaurant", column,restaurant);
     }
 }
