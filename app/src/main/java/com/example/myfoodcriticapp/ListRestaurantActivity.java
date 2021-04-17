@@ -26,6 +26,11 @@ Button backBtn;
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
 
+        Database db = new Database(getApplicationContext());
+        Cursor getRestaurantDetails = db.getAllRestaurants();
+        getRestaurantDetails.moveToFirst();
+
+
 
     }
 }
