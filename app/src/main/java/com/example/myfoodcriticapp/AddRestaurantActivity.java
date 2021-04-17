@@ -9,10 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddRestaurantActivity extends AppCompatActivity {
 EditText restaurantName, restaurantAddress, restaurantPhone;
-Button continueBtn;
+Button continueBtn, viewRestaurantBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ Button continueBtn;
         restaurantAddress = findViewById(R.id.addressTextbox);
         restaurantPhone = findViewById(R.id.phoneTextbox);
         continueBtn = findViewById(R.id.continueBtn);
+        viewRestaurantBtn = findViewById(R.id.viewResBtn);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +41,11 @@ Button continueBtn;
                 String restaurantNameValue = restaurantName.getText().toString();
                 String restaurantAddressValue = restaurantAddress.getText().toString();
                 String restaurantPhoneNumValue = restaurantPhone.getText().toString();
+                if(restaurantNameValue.isEmpty() || restaurantAddressValue.isEmpty() || restaurantPhoneNumValue.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Enter Data Again!", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant!", Toast.LENGTH_SHORT).show();
+                }
                 // ContentValues class is used for containing data that can be passed onto.
                 ContentValues values = new ContentValues();
                 values.put("name", restaurantNameValue);
@@ -52,8 +59,16 @@ Button continueBtn;
                     The startActivity occurs to to initiate the next activity called AddFoodActivity.
                  */
                 long restaurantID = db.addRestaurant(values);
-                Intent intent = new Intent(AddRestaurantActivity.this,AddFoodActivity.class);
-                intent.putExtra("ID",restaurantID);
+//                Intent intent = new Intent(AddRestaurantActivity.this,AddFoodActivity.class);
+//                intent.putExtra("ID",restaurantID);
+//                startActivity(intent);
+            }
+        });
+
+        viewRestaurantBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddRestaurantActivity.this,ListRestaurantActivity.class);
                 startActivity(intent);
             }
         });
