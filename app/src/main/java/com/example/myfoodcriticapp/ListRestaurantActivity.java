@@ -40,6 +40,25 @@ private Database db;
         Cursor getRestaurantDetails = db.getAllRestaurants();
         getRestaurantDetails.moveToFirst();
 
+        // do while loop used to get each restaurant name as a string and places inside its on TextView.
+        do {
+            String restaurantName = getRestaurantDetails.getString(0);
+            TextView restaurantNameText = new TextView(this);
+            restaurantNameText.setText(restaurantName);
+            container.addView(restaurantNameText);
+            Button viewRestaurantBtn = new Button(this);
+            long ID = getRestaurantDetails.getLong(3);
+            viewRestaurantBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ListRestaurantActivity.this,ViewRestaurantActivity.class);
+                    intent.putExtra("ID",ID);
+                    startActivity(intent);
+                }
+            });
+            viewRestaurantBtn.setText("View");
+            container.addView(viewRestaurantBtn);
+        } while(getRestaurantDetails.moveToNext());
 
 
         // backBtn returns back to AddRestaurantActivity
