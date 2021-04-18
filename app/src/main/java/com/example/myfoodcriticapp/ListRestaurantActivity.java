@@ -71,6 +71,16 @@ private Database db;
             }
         });
 
+        //if there are any action, show a toast
+        if(action.equals("deleted")) {
+            //create a new toast here.
+            Toast.makeText(getApplicationContext(), "Successfully Deleted Restaurant", Toast.LENGTH_LONG).show();
+        }
+
+        if(action.equals("updated")) {
+            //create a new toast here.
+            Toast.makeText(getApplicationContext(), "Successfully Updated Restaurant", Toast.LENGTH_LONG).show();
+        }
 
 
     }
