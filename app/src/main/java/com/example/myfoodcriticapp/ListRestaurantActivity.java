@@ -29,7 +29,20 @@ private Database db;
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
 
+        String action = getIntent().getStringExtra("action");
+        if(action==null) {
+            action = "";
+        }
 
+        //  // returns the application object context in order to return data
+        db = new Database(getApplicationContext());
+        // returns a query that results in displaying all the Restaurants.
+        Cursor getRestaurantDetails = db.getAllRestaurants();
+        getRestaurantDetails.moveToFirst();
+
+
+
+        // backBtn returns back to AddRestaurantActivity
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
