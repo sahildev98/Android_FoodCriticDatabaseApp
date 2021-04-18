@@ -10,13 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListRestaurantActivity extends AppCompatActivity {
 Button backBtn;
+private Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_restaurant);
+        // Linear implemented to display all restaurants within a layout
         LinearLayout container = findViewById(R.id.linearContainer);
         /**
          * @return the fragment manager that is associated with this activity. Fragment is then
@@ -26,19 +29,6 @@ Button backBtn;
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
 
-        Database db = new Database(getApplicationContext());
-        Cursor getRestaurantDetails = db.getAllRestaurants();
-        getRestaurantDetails.moveToFirst();
-
-        do {
-            String getRestaurantName = getRestaurantDetails.getString(0);
-            TextView restaurantName = new TextView(this);
-            restaurantName.setText(getRestaurantName);
-            container.addView(restaurantName);
-            Button deleteBtn = new Button(this);
-            deleteBtn.setText("Delete");
-            container.addView(deleteBtn);
-        } while(getRestaurantDetails.moveToNext());
 
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +41,6 @@ Button backBtn;
 
 
 
-
     }
+
 }
