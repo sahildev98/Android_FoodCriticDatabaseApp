@@ -27,7 +27,9 @@ public class Database extends DatabaseHelper {
 
     public long updateRestaurant(ContentValues values, long ID, String newValue) {
         SQLiteDatabase db = getWritableDatabase();
-
+        values.put("name", newValue);
+        values.put("address", newValue);
+        values.put("phone", newValue);
         return 1;
     }
 
