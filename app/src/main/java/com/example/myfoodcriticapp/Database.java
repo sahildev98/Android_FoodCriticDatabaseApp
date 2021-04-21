@@ -25,12 +25,11 @@ public class Database extends DatabaseHelper {
         return db.insert("ratings",null,values);
     }
 
-    public long updateRestaurant(ContentValues values, long ID, String newValue) {
+    public long updateRestaurant(ContentValues values, long ID) {
         SQLiteDatabase db = getWritableDatabase();
-        values.put("name", newValue);
-        values.put("address", newValue);
-        values.put("phone", newValue);
-        return 1;
+        String column = "ID=?";
+        String [] selectionArgs = {String.valueOf(ID)};
+        return db.update("Restaurant", values, column, selectionArgs);
     }
 
     public Cursor getRestaurant(long ID) {
