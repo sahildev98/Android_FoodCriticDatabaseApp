@@ -57,6 +57,22 @@ public class Database extends DatabaseHelper {
 
     }
 
+    public Cursor getMenuItems(long restaurantID){
+        SQLiteDatabase db  = this.getReadableDatabase();
+        String table = "Food";
+        String [] columns = {"name", "price", "description", "ID"};
+        String selection = "restaurantID=?";
+        String [] selectionsArgs = {String.valueOf(restaurantID)};
+        String groupBy = null;
+        String having = null;
+        String orderBy = "name DESC";
+        String limit = "";
+
+        Cursor cursor = db.query(table, columns, selection, selectionsArgs, groupBy, having, orderBy, limit);
+        return cursor;
+    }
+
+
     public Cursor getFood(long ID){
         SQLiteDatabase db  = this.getReadableDatabase();
         String table = "Food";
@@ -103,10 +119,10 @@ public class Database extends DatabaseHelper {
         return cursor;
     }
 
-    public int DeleteRestaurant(long ID){
-        SQLiteDatabase db = this.getReadableDatabase();
-        String column = "name=?";
-        String [] restaurant =  {"name"};
+    public int deleteRestaurant(long ID){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String column = "ID=?";
+        String [] restaurant =  {String.valueOf(ID)};
 
         return db.delete("Restaurant", column,restaurant);
     }
