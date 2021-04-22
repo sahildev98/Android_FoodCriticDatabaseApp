@@ -33,5 +33,12 @@ public class EditRestaurantActivity extends AppCompatActivity {
         Button updateBtn = findViewById(R.id.continueBtn);
         updateBtn.setText("Update Restaurant");
 
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 }
