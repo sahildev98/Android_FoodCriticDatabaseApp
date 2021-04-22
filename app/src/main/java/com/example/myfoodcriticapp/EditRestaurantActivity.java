@@ -37,6 +37,9 @@ public class EditRestaurantActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ContentValues values = new ContentValues();
+                values.put("name",restaurantNameText.getText().toString());
+                values.put("address",restaurantAddressText.getText().toString());
+                values.put("phone",restaurantPhoneText.getText().toString());
 
             }
         });
