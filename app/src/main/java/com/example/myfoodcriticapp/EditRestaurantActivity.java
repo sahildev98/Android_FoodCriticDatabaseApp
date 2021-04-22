@@ -26,5 +26,9 @@ public class EditRestaurantActivity extends AppCompatActivity {
         TextView restaurantAddressText = findViewById(R.id.addressTextbox);
         TextView restaurantPhoneText = findViewById(R.id.phoneTextbox);
 
+        restaurantNameText.setText(restaurantDetails.getString(0));
+        restaurantAddressText.setText(restaurantDetails.getString(1));
+        restaurantPhoneText.setText(restaurantDetails.getString(2));
+
     }
 }
