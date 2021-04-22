@@ -30,5 +30,8 @@ public class EditRestaurantActivity extends AppCompatActivity {
         restaurantAddressText.setText(restaurantDetails.getString(1));
         restaurantPhoneText.setText(restaurantDetails.getString(2));
 
+        Button updateBtn = findViewById(R.id.continueBtn);
+        updateBtn.setText("Update Restaurant");
+
     }
 }
