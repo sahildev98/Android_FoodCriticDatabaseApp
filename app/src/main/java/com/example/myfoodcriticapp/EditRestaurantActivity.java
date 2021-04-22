@@ -22,5 +22,9 @@ public class EditRestaurantActivity extends AppCompatActivity {
         Cursor restaurantDetails  = db.getRestaurant(ID);
         restaurantDetails.moveToFirst();
 
+        TextView restaurantNameText = findViewById(R.id.nameTextbox);
+        TextView restaurantAddressText = findViewById(R.id.addressTextbox);
+        TextView restaurantPhoneText = findViewById(R.id.phoneTextbox);
+
     }
 }
