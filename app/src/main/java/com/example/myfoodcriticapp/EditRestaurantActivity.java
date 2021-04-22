@@ -17,7 +17,10 @@ public class EditRestaurantActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_restaurant);
-
+        Long ID = getIntent().getLongExtra("ID",0);
+        db = new Database(getApplicationContext());
+        Cursor restaurantDetails  = db.getRestaurant(ID);
+        restaurantDetails.moveToFirst();
 
     }
 }
