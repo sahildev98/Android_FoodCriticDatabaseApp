@@ -43,6 +43,6 @@ public class EditRestaurantActivity extends AppCompatActivity {
 
             }
         });
-
     }
+    private void updateRestaurant(ContentValues values, long ID){db.updateRestaurant(values, ID);}
 }
