@@ -40,7 +40,7 @@ public class EditRestaurantActivity extends AppCompatActivity {
                 values.put("name",restaurantNameText.getText().toString());
                 values.put("address",restaurantAddressText.getText().toString());
                 values.put("phone",restaurantPhoneText.getText().toString());
-
+                updateRestaurant(values,ID);
             }
         });
     }
