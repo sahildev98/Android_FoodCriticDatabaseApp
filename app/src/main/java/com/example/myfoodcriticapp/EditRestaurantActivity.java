@@ -36,6 +36,7 @@ public class EditRestaurantActivity extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ContentValues values = new ContentValues();
 
             }
         });
