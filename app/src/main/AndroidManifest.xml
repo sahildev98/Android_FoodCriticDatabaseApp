@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFoodCriticApp">
-        <activity android:name=".ListRestaurantActivity"></activity>
+        <activity android:name=".EditRestaurantActivity"></activity>
+        <activity android:name=".ViewRestaurantActivity" />
+        <activity android:name=".ListRestaurantActivity" />
         <activity android:name=".OutputFoodCrticActivity" />
         <activity android:name=".AddReviewActivity" />
         <activity android:name=".AddRestaurantActivity" />
