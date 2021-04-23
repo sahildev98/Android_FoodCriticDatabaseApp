@@ -41,10 +41,10 @@ Button continueBtn, viewRestaurantBtn;
                 String restaurantNameValue = restaurantName.getText().toString();
                 String restaurantAddressValue = restaurantAddress.getText().toString();
                 String restaurantPhoneNumValue = restaurantPhone.getText().toString();
-                if(restaurantNameValue.isEmpty() || restaurantAddressValue.isEmpty() || restaurantPhoneNumValue.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "Enter Data Again!", Toast.LENGTH_SHORT).show();
+                if(restaurantNameValue.matches("") || restaurantAddressValue.matches("") || restaurantPhoneNumValue.matches("")){
+                    Toast.makeText(getApplicationContext(), "Enter Data Again!", Toast.LENGTH_LONG).show();
                 } else{
-                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant!", Toast.LENGTH_LONG).show();
                 }
                 // ContentValues class is used for containing data that can be passed onto.
                 ContentValues values = new ContentValues();
