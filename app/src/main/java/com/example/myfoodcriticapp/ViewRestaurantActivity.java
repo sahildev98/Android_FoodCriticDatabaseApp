@@ -30,5 +30,6 @@ public class ViewRestaurantActivity extends AppCompatActivity {
 
         String name =  restaurantDetails.getString(0);
         String address =  restaurantDetails.getString(1);
+        String phone = restaurantDetails.getString(2);
     }
 }
