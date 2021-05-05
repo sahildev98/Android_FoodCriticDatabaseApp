@@ -130,5 +130,4 @@
         app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintStart_toStartOf="@+id/phoneTextbox"
         app:layout_constraintTop_toBottomOf="@+id/phoneTextbox" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
