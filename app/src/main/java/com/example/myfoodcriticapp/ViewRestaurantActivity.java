@@ -29,5 +29,6 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         restaurantDetails.moveToFirst();
 
         String restaurantName =  restaurantDetails.getString(0);
+        String address =  restaurantDetails.getString(1);
     }
 }
