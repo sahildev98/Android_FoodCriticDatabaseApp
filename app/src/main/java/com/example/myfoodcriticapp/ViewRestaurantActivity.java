@@ -34,6 +34,9 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         TextView textViewName = findViewById(R.id.restaurantNameViewText);
         TextView textViewAddress = findViewById(R.id.restaurantAddressViewText);
         TextView textViewPhone = findViewById(R.id.restaurantPhoneViewText);
+        textViewName.setText(name);
+        textViewAddress.setText(address);
+        textViewPhone.setText(phone);
 
     }
 }
