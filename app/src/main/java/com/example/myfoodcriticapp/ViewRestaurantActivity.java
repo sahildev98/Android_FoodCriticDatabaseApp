@@ -27,5 +27,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         db = new Database(getApplicationContext());
         Cursor restaurantDetails = db.getRestaurant(ID);
         restaurantDetails.moveToFirst();
+
+        String restaurantName =  restaurantDetails.getString(0);
     }
 }
