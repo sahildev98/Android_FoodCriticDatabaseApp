@@ -41,11 +41,7 @@ Button continueBtn, viewRestaurantBtn;
                 String restaurantNameValue = restaurantName.getText().toString();
                 String restaurantAddressValue = restaurantAddress.getText().toString();
                 String restaurantPhoneNumValue = restaurantPhone.getText().toString();
-                if(restaurantNameValue.matches("") || restaurantAddressValue.matches("") || restaurantPhoneNumValue.matches("")){
-                    Toast.makeText(getApplicationContext(), "Enter Restaurant Details Again!", Toast.LENGTH_LONG).show();
-                } else{
-                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant.", Toast.LENGTH_LONG).show();
-                }
+
                 // ContentValues class is used for containing data that can be passed onto.
                 ContentValues values = new ContentValues();
                 values.put("name", restaurantNameValue);
@@ -58,10 +54,16 @@ Button continueBtn, viewRestaurantBtn;
                     to parse the primary key to the next activity as a foreign key use.
                     The startActivity occurs to to initiate the next activity called AddFoodActivity.
                  */
-                long restaurantID = db.addRestaurant(values);
+
 //                Intent intent = new Intent(AddRestaurantActivity.this,AddFoodActivity.class);
 //                intent.putExtra("ID",restaurantID);
 //                startActivity(intent);
+                if(restaurantNameValue.isEmpty()  || restaurantAddressValue.isEmpty()  || restaurantPhoneNumValue.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Enter Restaurant Details Again!", Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant.", Toast.LENGTH_LONG).show();
+                    Long restaurantID = db.addRestaurant(values);
+                }
             }
         });
 
