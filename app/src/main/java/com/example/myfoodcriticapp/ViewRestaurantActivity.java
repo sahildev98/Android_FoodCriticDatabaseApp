@@ -31,5 +31,9 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         String name =  restaurantDetails.getString(0);
         String address =  restaurantDetails.getString(1);
         String phone = restaurantDetails.getString(2);
+        TextView textViewName = findViewById(R.id.restaurantNameViewText);
+        TextView textViewAddress = findViewById(R.id.restaurantAddressViewText);
+        TextView textViewPhone = findViewById(R.id.restaurantPhoneViewText);
+
     }
 }
