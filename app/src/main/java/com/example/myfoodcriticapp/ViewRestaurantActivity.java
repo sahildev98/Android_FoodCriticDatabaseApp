@@ -44,6 +44,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ViewRestaurantActivity.this,EditRestaurantActivity.class);
                 intent.putExtra("ID",ID);
+                startActivity(intent);
             }
         });
 
