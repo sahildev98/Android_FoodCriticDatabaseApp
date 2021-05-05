@@ -38,5 +38,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         textViewAddress.setText(address);
         textViewPhone.setText(phone);
 
+        Button editButton = findViewById(R.id.editRestaurantViewBtn);
+
     }
 }
