@@ -1,6 +1,7 @@
 package com.example.myfoodcriticapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -17,7 +18,7 @@ public class EditRestaurantActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant);
-        Long ID = getIntent().getLongExtra("ID",0);
+        long ID = getIntent().getLongExtra("ID",0);
         db = new Database(getApplicationContext());
         Cursor restaurantDetails  = db.getRestaurant(ID);
         restaurantDetails.moveToFirst();
@@ -31,7 +32,7 @@ public class EditRestaurantActivity extends AppCompatActivity {
         restaurantPhoneText.setText(restaurantDetails.getString(2));
 
         Button updateBtn = findViewById(R.id.continueBtn);
-        updateBtn.setText("Update Restaurant");
+        updateBtn.setText(R.string.updateBtnName);
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,8 @@ public class EditRestaurantActivity extends AppCompatActivity {
                 values.put("address",restaurantAddressText.getText().toString());
                 values.put("phone",restaurantPhoneText.getText().toString());
                 updateRestaurant(values,ID);
+                Intent intent = new Intent(EditRestaurantActivity.this, ListRestaurantActivity.class);
+                startActivity(intent);
             }
         });
     }
