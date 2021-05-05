@@ -22,7 +22,9 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
+
         long ID = getIntent().getLongExtra("ID",0);
         db = new Database(getApplicationContext());
+        Cursor restaurantDetails = db.getRestaurant(ID);
     }
 }
