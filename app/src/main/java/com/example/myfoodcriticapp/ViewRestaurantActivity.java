@@ -19,6 +19,8 @@ public class ViewRestaurantActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_restaurant);
-
+        FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
+        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
+        fragmentTransact.commit();
     }
 }
