@@ -21,9 +21,12 @@
     <string name="enterReviewText">Enter Review Details:</string>
     <string name="ratingTextView">Rating:</string>
     <string name="reviewLbl">Review Food:</string>
-    <string name="reviewDescriptionText"></string>
     <string name="reviewBtn">Add Review</string>
     <string name="enterReviewTextbox">Enter Review of Food</string>
     <string name="viewRestaurantBtn">View Restaurants</string>
     <string name="backBtn">Back</string>
+    <string name="title_activity_view_restaurant">ViewRestaurantActivity</string>
+    <string name="editText">Edit</string>
+    <string name="deleteText">Delete</string>
+    <string name="updateBtnName">Update Restaurant</string>
 </resources>
