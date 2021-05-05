@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.net.IDN;
 
 public class ViewRestaurantActivity extends AppCompatActivity {
-
+    private Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +23,6 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
         long ID = getIntent().getLongExtra("ID",0);
+        db = new Database(getApplicationContext());
     }
 }
