@@ -46,4 +46,14 @@
         app:layout_constraintStart_toStartOf="@+id/foodPriceText"
         app:layout_constraintTop_toBottomOf="@+id/foodPriceText" />
 
+    <Button
+        android:id="@+id/foodEditBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/editText"
+        app:backgroundTint="@color/design_default_color_error"
+        app:layout_constraintStart_toStartOf="@+id/foodDescriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/foodDescriptionText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
