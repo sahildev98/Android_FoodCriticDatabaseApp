@@ -42,7 +42,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         bckBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ViewRestaurantActivity.this, ListRestaurantActivity.class);
             }
         });
 
