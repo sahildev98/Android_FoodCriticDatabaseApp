@@ -33,7 +33,7 @@ public class ListFoodItemsActivity extends AppCompatActivity {
         Cursor getFoodItemsDetails = db.getMenuItems(foodID);
         getFoodItemsDetails.moveToFirst();
         do {
-
+            String foodName = getFoodItemsDetails.getString(0);
         }while (getFoodItemsDetails.moveToNext());
     }
 }
