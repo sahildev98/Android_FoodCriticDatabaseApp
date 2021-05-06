@@ -59,6 +59,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:text="@string/deleteText"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="@+id/restaurantPhoneViewText"
         app:layout_constraintTop_toBottomOf="@+id/restaurantPhoneViewText" />
 
@@ -68,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/editText"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintStart_toStartOf="@+id/restaurantPhoneViewText"
         app:layout_constraintTop_toBottomOf="@+id/restaurantPhoneViewText" />
 
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/addFootItemBtn"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="@+id/deleteRestaurantView"
         app:layout_constraintTop_toBottomOf="@+id/deleteRestaurantView" />
 
@@ -86,6 +89,18 @@
         android:layout_height="49dp"
         android:layout_marginTop="16dp"
         android:text="@string/reviewBtn"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="@+id/nxtFoodBtn"
         app:layout_constraintTop_toBottomOf="@+id/nxtFoodBtn" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/backBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_container_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>
