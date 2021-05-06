@@ -39,6 +39,12 @@ public class ListFoodItemsActivity extends AppCompatActivity {
             container.addView(foodNameText);
             Button viewRestaurantBtn = new Button(this);
             long restaurantID = getFoodItemsDetails.getLong(3);
+            viewRestaurantBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }while (getFoodItemsDetails.moveToNext());
     }
 }
