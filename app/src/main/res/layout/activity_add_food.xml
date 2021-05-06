@@ -98,6 +98,17 @@
         app:layout_constraintEnd_toEndOf="@+id/descriptionTextbox"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTextbox" />
 
+    <Button
+        android:id="@+id/viewFoodBtn"
+        android:layout_width="141dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/viewFoodItems"
+        app:backgroundTint="@color/design_default_color_error"
+        app:layout_constraintStart_toStartOf="@+id/descriptionTextbox"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextbox" />
+
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
         android:layout_width="match_parent"

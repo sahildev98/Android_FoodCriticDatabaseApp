@@ -78,5 +78,15 @@ public class AddFoodActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Button viewFoodItemsBtn = findViewById(R.id.viewFoodBtn);
+        viewFoodItemsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddFoodActivity.this,ListFoodItemsActivity.class);
+                intent.putExtra("restaurantID",restaurantID);
+                startActivity(intent);
+            }
+        });
     }
 }

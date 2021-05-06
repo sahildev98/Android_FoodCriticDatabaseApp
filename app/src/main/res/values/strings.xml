@@ -29,4 +29,5 @@
     <string name="editText">Edit</string>
     <string name="deleteText">Delete</string>
     <string name="updateBtnName">Update Restaurant</string>
+    <string name="viewFoodItems">View FoodItems</string>
 </resources>
