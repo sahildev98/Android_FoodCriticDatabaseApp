@@ -68,9 +68,7 @@ public class AddFoodActivity extends AppCompatActivity {
                     The startActivity occurs to to initiate the next activity called AddReviewActivity.
                  */
                 long foodID = db.addFood(values);
-                Intent intent= new Intent(AddFoodActivity.this,AddReviewActivity.class);
-                intent.putExtra("ID",foodID);
-                startActivity(intent);
+
             }
         });
 
