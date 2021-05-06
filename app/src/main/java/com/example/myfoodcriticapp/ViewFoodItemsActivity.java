@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ViewFoodItemsActivity extends AppCompatActivity {
-
+private Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
