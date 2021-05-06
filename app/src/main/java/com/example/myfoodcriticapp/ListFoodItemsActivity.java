@@ -42,7 +42,8 @@ public class ListFoodItemsActivity extends AppCompatActivity {
             viewRestaurantBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(ListFoodItemsActivity.this,ViewFoodItemsActivity.class);
+                    startActivity(intent);
                 }
             });
         }while (getFoodItemsDetails.moveToNext());
