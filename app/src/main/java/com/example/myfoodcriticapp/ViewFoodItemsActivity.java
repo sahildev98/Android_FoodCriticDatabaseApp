@@ -45,6 +45,7 @@ private Database db;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewFoodItemsActivity.this,EditRestaurantActivity.class);
+                intent.putExtra("foodID",foodID);
                 startActivity(intent);
             }
         });
