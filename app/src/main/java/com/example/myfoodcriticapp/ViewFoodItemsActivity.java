@@ -21,8 +21,9 @@ private Database db;
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
         fragmentTransact.commit();
-
+        // returns the application object context in order to return data
         long foodID = getIntent().getLongExtra("restaurantID", 0);
+        db = new Database(getApplicationContext());
 
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
