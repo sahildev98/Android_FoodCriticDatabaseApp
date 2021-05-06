@@ -11,10 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddFoodActivity extends AppCompatActivity {
     EditText foodName, price, foodDescription;
     Button addFoodBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,16 +26,16 @@ public class AddFoodActivity extends AppCompatActivity {
          * initialised with a beginTransaction method.
          */
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
-        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
+        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
         fragmentTransact.commit();
         /**
-         * retrieves intent data from from previous activity. This ID represents as a foreign key to the
+         * retrieves intent data from from previous activity. Restaurant ID represents as a foreign key to the
          * table restaurant ID
          */
-        Long restaurantID = getIntent().getLongExtra("ID",0);
+        Long restaurantID = getIntent().getLongExtra("ID", 0);
         // returns the application object context in order to return data
         Database db = new Database(getApplicationContext());
-        Cursor restaurantDetails=db.getRestaurant(restaurantID);
+        Cursor restaurantDetails = db.getRestaurant(restaurantID);
         restaurantDetails.moveToFirst();
         String restaurantName = "Restaurant name entered: " + restaurantDetails.getString(0);
         String restaurantAddress = restaurantDetails.getString(1);
@@ -53,7 +55,7 @@ public class AddFoodActivity extends AppCompatActivity {
                 /* Values that will be inserted into the database with the following columns: name
             price and description passed in as Strings and double for price.  */
                 String foodNameValue = foodName.getText().toString();
-                String priceString =  price.getText().toString();
+                String priceString = price.getText().toString();
                 double priceValue = Double.parseDouble(priceString);
                 String descriptionValue = foodDescription.getText().toString();
                 // ContentValues class is implemented for containing the data above so it that can be passed onto.
@@ -67,16 +69,14 @@ public class AddFoodActivity extends AppCompatActivity {
                     to parse the primary key to the next activity as a foreign key use.
                     The startActivity occurs to to initiate the next activity called AddReviewActivity.
                  */
-                long foodID = db.addFood(values);
 
+                if (foodNameValue.isEmpty() || priceString.isEmpty() || descriptionValue.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Enter Restaurant Details Again!", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant.", Toast.LENGTH_LONG).show();
+                    long foodID = db.addFood(values);
+                }
             }
         });
-
-
-
-
-
-
-
     }
 }
