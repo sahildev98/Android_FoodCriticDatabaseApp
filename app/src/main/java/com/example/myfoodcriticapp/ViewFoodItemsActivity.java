@@ -40,6 +40,14 @@ private Database db;
         textViewPrice.setText(foodPrice);
         textViewDescription.setText(foodDescription);
 
+        Button editBtn = findViewById(R.id.foodEditBtn);
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
         nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
