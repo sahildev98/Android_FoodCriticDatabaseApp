@@ -47,6 +47,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button deleteButton = findViewById(R.id.deleteRestaurantView);
 
     }
 }
