@@ -14,7 +14,10 @@ public class ViewFoodItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_food_items);
-
+        /**
+         * @return the fragment manager that is associated with this activity. Fragment is then
+         * initialised with a beginTransaction method.
+         */
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
         fragmentTransact.commit();
