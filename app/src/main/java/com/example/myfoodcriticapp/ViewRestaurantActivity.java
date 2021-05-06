@@ -59,6 +59,12 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         });
 
         Button nxtAddFoodButton = findViewById(R.id.nxtFoodBtn);
+        nxtAddFoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
     private void deleteRestaurant(long ID){ db.deleteRestaurant(ID);}
