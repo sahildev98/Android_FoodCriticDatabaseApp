@@ -75,7 +75,7 @@
         android:layout_marginRight="24dp"
         android:ems="10"
         android:inputType="text"
-        android:autofillHints="@string/reviewDescriptionText"
+        android:autofillHints="@string/enterReviewTextbox"
         android:hint="@string/enterReviewTextbox"
 
         app:layout_constraintEnd_toEndOf="parent"
