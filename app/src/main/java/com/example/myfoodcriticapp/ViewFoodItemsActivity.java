@@ -1,6 +1,7 @@
 package com.example.myfoodcriticapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,10 @@ public class ViewFoodItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_food_items);
+
+        FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
+        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
+        fragmentTransact.commit();
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
         nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
