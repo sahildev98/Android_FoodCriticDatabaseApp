@@ -38,6 +38,9 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         textViewAddress.setText(address);
         textViewPhone.setText(phone);
 
+        Button bckBtn = findViewById(R.id.backBtn);
+
+
         Button editButton = findViewById(R.id.editRestaurantViewBtn);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,12 +72,14 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         });
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
-        nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ViewRestaurantActivity.this, AddReviewActivity.class);
+//                intent.putExtra("ID",ID);
+//                startActivity(intent);
+//            }
+//        });
 
     }
     private void deleteRestaurant(long ID){ db.deleteRestaurant(ID);}
