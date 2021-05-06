@@ -50,5 +50,13 @@ public class ListFoodItemsActivity extends AppCompatActivity {
             viewRestaurantBtn.setText("View");
             container.addView(viewRestaurantBtn);
         }while (getFoodItemsDetails.moveToNext());
+
+        Button backBtn = findViewById(R.id.backButton);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
