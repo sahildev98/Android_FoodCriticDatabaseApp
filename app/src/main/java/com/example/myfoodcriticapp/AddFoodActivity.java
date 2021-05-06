@@ -71,9 +71,9 @@ public class AddFoodActivity extends AppCompatActivity {
                  */
 
                 if (foodNameValue.isEmpty() || priceString.isEmpty() || descriptionValue.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Enter Restaurant Details Again!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Enter Food Details Again!", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Successfully Entered Restaurant.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Successfully Entered Food Item.", Toast.LENGTH_LONG).show();
                     long foodID = db.addFood(values);
                 }
             }
