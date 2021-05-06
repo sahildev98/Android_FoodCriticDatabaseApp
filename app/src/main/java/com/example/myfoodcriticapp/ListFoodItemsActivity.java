@@ -30,5 +30,6 @@ public class ListFoodItemsActivity extends AppCompatActivity {
         //  // returns the application object context in order to return data
         db = new Database(getApplicationContext());
         long foodID = getIntent().getLongExtra("restaurantID", 0);
+        Cursor getFoodItemsDetails = db.getMenuItems(foodID);
     }
 }
