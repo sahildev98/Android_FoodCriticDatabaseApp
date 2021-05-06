@@ -58,6 +58,8 @@ public class ViewRestaurantActivity extends AppCompatActivity {
             }
         });
 
+        Button nxtAddFoodButton = findViewById(R.id.nxtFoodBtn);
+
     }
     private void deleteRestaurant(long ID){ db.deleteRestaurant(ID);}
 }
