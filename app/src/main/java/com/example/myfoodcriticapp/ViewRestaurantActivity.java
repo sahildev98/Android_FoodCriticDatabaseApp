@@ -20,16 +20,16 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_restaurant);
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
-        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
+        fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
         fragmentTransact.commit();
 
-        long ID = getIntent().getLongExtra("ID",0);
+        long ID = getIntent().getLongExtra("ID", 0);
         db = new Database(getApplicationContext());
         Cursor restaurantDetails = db.getRestaurant(ID);
         restaurantDetails.moveToFirst();
 
-        String name =  restaurantDetails.getString(0);
-        String address =  restaurantDetails.getString(1);
+        String name = restaurantDetails.getString(0);
+        String address = restaurantDetails.getString(1);
         String phone = restaurantDetails.getString(2);
         TextView textViewName = findViewById(R.id.restaurantNameViewText);
         TextView textViewAddress = findViewById(R.id.restaurantAddressViewText);
@@ -42,8 +42,8 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewRestaurantActivity.this,EditRestaurantActivity.class);
-                intent.putExtra("ID",ID);
+                Intent intent = new Intent(ViewRestaurantActivity.this, EditRestaurantActivity.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });
@@ -51,9 +51,10 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
     }
+    private void deleteRestaurant(long ID){ db.deleteRestaurant(ID);}
 }
