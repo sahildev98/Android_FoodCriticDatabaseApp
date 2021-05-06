@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ViewRestaurantActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.fragment.app.FragmentContainerView>
+
     <TextView
         android:id="@+id/restaurantNameViewText"
         android:layout_width="0dp"
@@ -19,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment_container_view" />
 
     <TextView
         android:id="@+id/restaurantAddressViewText"
@@ -45,8 +55,8 @@
 
     <Button
         android:id="@+id/deleteRestaurantView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:text="@string/deleteText"
         app:layout_constraintEnd_toEndOf="@+id/restaurantPhoneViewText"
@@ -57,7 +67,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/EditText"
+        android:text="@string/editText"
         app:layout_constraintStart_toStartOf="@+id/restaurantPhoneViewText"
         app:layout_constraintTop_toBottomOf="@+id/restaurantPhoneViewText" />
+
+    <Button
+        android:id="@+id/nxtFoodBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/addFootItemBtn"
+        app:layout_constraintEnd_toEndOf="@+id/deleteRestaurantView"
+        app:layout_constraintTop_toBottomOf="@+id/deleteRestaurantView" />
+
+    <Button
+        android:id="@+id/nxtReviewBtn"
+        android:layout_width="147dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/reviewBtn"
+        app:layout_constraintEnd_toEndOf="@+id/nxtFoodBtn"
+        app:layout_constraintTop_toBottomOf="@+id/nxtFoodBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
