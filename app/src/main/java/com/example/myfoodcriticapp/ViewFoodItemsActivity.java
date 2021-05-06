@@ -8,6 +8,9 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class ViewFoodItemsActivity extends AppCompatActivity {
 private Database db;
@@ -30,7 +33,9 @@ private Database db;
         String foodName = foodDetails.getString(0);
         String foodPrice = foodDetails.getString(1);
         String foodDescription = foodDetails.getString(2);
-
+        TextView textViewFoodName = findViewById(R.id.foodNameText);
+        TextView textViewPrice = findViewById(R.id.foodPriceText);
+        TextView textViewDescription = findViewById(R.id.foodDescriptionText);
 
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
