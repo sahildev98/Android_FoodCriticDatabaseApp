@@ -37,6 +37,7 @@ public class ListFoodItemsActivity extends AppCompatActivity {
             TextView foodNameText = new TextView(this);
             foodNameText.setText(foodName);
             container.addView(foodNameText);
+            Button viewRestaurantBtn = new Button(this);
         }while (getFoodItemsDetails.moveToNext());
     }
 }
