@@ -2,7 +2,10 @@ package com.example.myfoodcriticapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class ViewFoodItemsActivity extends AppCompatActivity {
 
@@ -11,14 +14,11 @@ public class ViewFoodItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_food_items);
 
-        //        Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
-//        nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(ViewRestaurantActivity.this, AddReviewActivity.class);
-//                intent.putExtra("ID",ID);
-//                startActivity(intent);
-//            }
-//        });
+        Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
+        nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 }
