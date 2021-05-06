@@ -21,5 +21,8 @@ public class ListFoodItemsActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransact = getSupportFragmentManager().beginTransaction();
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class,null);
         fragmentTransact.commit();
+
+        //  // returns the application object context in order to return data
+        db = new Database(getApplicationContext());
     }
 }
