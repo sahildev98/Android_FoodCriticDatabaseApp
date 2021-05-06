@@ -47,6 +47,8 @@ public class ListFoodItemsActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            viewRestaurantBtn.setText("View");
+            container.addView(viewRestaurantBtn);
         }while (getFoodItemsDetails.moveToNext());
     }
 }
