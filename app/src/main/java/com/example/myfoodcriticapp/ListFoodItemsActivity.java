@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 public class ListFoodItemsActivity extends AppCompatActivity {
-
+    private Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
