@@ -27,6 +27,11 @@ private Database db;
         db = new Database(getApplicationContext());
         Cursor foodDetails = db.getFood(foodID);
 
+        String foodName = foodDetails.getString(0);
+        String foodPrice = foodDetails.getString(1);
+        String foodDescription = foodDetails.getString(2);
+
+
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
         nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
