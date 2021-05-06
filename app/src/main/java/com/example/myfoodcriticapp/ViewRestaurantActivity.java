@@ -48,6 +48,12 @@ public class ViewRestaurantActivity extends AppCompatActivity {
             }
         });
         Button deleteButton = findViewById(R.id.deleteRestaurantView);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
 
     }
 }
