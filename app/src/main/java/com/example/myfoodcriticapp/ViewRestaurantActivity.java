@@ -62,7 +62,9 @@ public class ViewRestaurantActivity extends AppCompatActivity {
         nxtAddFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ViewRestaurantActivity.this, AddFoodActivity.class);
+                intent.putExtra("ID",ID);
+                startActivity(intent);
             }
         });
 
