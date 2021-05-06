@@ -54,6 +54,7 @@ public class ViewRestaurantActivity extends AppCompatActivity {
                 deleteRestaurant(ID);
                 Intent intent = new Intent(ViewRestaurantActivity.this, ListRestaurantActivity.class);
                 intent.putExtra("action","deleted");
+                startActivity(intent);
             }
         });
 
