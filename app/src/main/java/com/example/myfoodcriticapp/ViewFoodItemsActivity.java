@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ private Database db;
         // returns the application object context in order to return data
         long foodID = getIntent().getLongExtra("restaurantID", 0);
         db = new Database(getApplicationContext());
+        Cursor foodDetails = db.getFood(foodID);
 
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
