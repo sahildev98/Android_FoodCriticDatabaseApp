@@ -31,5 +31,7 @@ public class ListFoodItemsActivity extends AppCompatActivity {
         db = new Database(getApplicationContext());
         long foodID = getIntent().getLongExtra("restaurantID", 0);
         Cursor getFoodItemsDetails = db.getMenuItems(foodID);
+        getFoodItemsDetails.moveToFirst();
+
     }
 }
