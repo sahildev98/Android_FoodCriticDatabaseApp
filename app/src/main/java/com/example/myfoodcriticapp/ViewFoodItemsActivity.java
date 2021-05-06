@@ -19,6 +19,9 @@ public class ViewFoodItemsActivity extends AppCompatActivity {
         fragmentTransact.add(R.id.fragment_container_view, FragmentActivity.class, null);
         fragmentTransact.commit();
 
+        long foodID = getIntent().getLongExtra("restaurantID", 0);
+
+
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
         nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
