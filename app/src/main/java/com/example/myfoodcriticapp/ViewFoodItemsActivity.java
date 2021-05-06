@@ -36,7 +36,9 @@ private Database db;
         TextView textViewFoodName = findViewById(R.id.foodNameText);
         TextView textViewPrice = findViewById(R.id.foodPriceText);
         TextView textViewDescription = findViewById(R.id.foodDescriptionText);
-
+        textViewFoodName.setText(foodName);
+        textViewPrice.setText(foodPrice);
+        textViewDescription.setText(foodDescription);
 
         Button nxtAddReviewButton = findViewById(R.id.nxtReviewBtn);
         nxtAddReviewButton.setOnClickListener(new View.OnClickListener() {
