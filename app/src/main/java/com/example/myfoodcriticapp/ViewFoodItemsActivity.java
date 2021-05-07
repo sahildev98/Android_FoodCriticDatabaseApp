@@ -44,7 +44,7 @@ private Database db;
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewFoodItemsActivity.this,EditRestaurantActivity.class);
+                Intent intent = new Intent(ViewFoodItemsActivity.this,EditFoodActivity.class);
                 intent.putExtra("foodID",foodID);
                 startActivity(intent);
             }
